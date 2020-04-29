@@ -23,8 +23,6 @@ def inicio(c_token):
     requisito = requests.get(api)
     print(requisito.text, file= answer)
 
-
-
 # Realiza a descriptação da mensagem.
 def descriptar(mensagem):
     # Condições para o funcionamento da função.
