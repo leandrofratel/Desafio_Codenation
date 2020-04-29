@@ -27,7 +27,7 @@ def inicio(c_token):
 def descriptar(mensagem):
     # Condições para o funcionamento da função.
     alfabeto = 'abcdefghijklmnopqrstuvwxyz'
-    casa = 3
+    casa = 3 # alterar para o número de casa do json.
     # Função.
     cripto = ''
     for c in mensagem:
@@ -46,5 +46,4 @@ descriptar(input('Informe a mensagem: '))
 teste = Desafio(10,"token_do_usuario","texto criptografado","aqui vai o texto decifrado","aqui vai o resumo")
 teste.criar_dicionario()
 """
-
 # token: 31d49c4bec438e1e41cc7eec111fb4153ae67647
