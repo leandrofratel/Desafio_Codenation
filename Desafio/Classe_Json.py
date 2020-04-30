@@ -1,3 +1,5 @@
+import json
+
 class Desafio():
     """Inicializa os atributos do desafio."""
     def __init__(self, casa, token, cifrado, decifrado, resumo_criptografico):
@@ -17,4 +19,6 @@ class Desafio():
             "decifrado": self.decifrado, 
             "resumo_criptografico": self.resumo_criptografico
             }
+        with open('answer.json', 'w') as file:
+            json.dump(dict, file)  
         print(dict)

@@ -28,13 +28,31 @@ def requisitar_e_salvar(c_token): # Cria uma cópia da requisição e retorna a 
             novo_cifrado += alfabeto[(indice_letra - casas) % len(alfabeto)]
         else:
             novo_cifrado += letra
-    return novo_cifrado.upper()
+    return novo_cifrado.lower()
 
 def encode_hash(frase): # Codifica e retorna a mensagem em sha1.
     # Codifica em sha1.
     return hashlib.sha1(str(frase).encode('utf-8')).hexdigest()
-    
-codenation = requisitar_e_salvar('31d49c4bec438e1e41cc7eec111fb4153ae67647')
-print(encode_hash(codenation))
 
-# token: 31d49c4bec438e1e41cc7eec111fb4153ae67647
+def captura_cifra(nome_do_arquivo): # Captura Cifra
+    # Salva a requisição em json.
+    with open(nome_do_arquivo, 'r') as file:
+        relatorio = json.load(file)
+        return relatorio["cifrado"]
+
+def captura_casa(nome_do_arquivo): # Captura Casa
+    # Salva a requisição em json.
+    with open(nome_do_arquivo, 'r') as file:
+        relatorio = json.load(file)
+        return relatorio["numero_casas"]
+
+original_token = '31d49c4bec438e1e41cc7eec111fb4153ae67647'
+
+inicio = requisitar_e_salvar(original_token)
+
+resumo_criptografico = encode_hash(inicio)
+cifra = captura_cifra('original_answer.json')
+casa = captura_cifra('original_answer.json')
+
+fim = Desafio(casa, original_token, inicio, cifra, resumo_criptografico)
+fim.criar_dicionario()
