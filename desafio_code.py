@@ -47,7 +47,6 @@ def captura_casa(nome_do_arquivo): # Captura Casa
         return relatorio["numero_casas"]
 
 original_token = '31d49c4bec438e1e41cc7eec111fb4153ae67647'
-
 inicio = requisitar_e_salvar(original_token)
 
 resumo_criptografico = encode_hash(inicio)
