@@ -52,7 +52,7 @@ inicio = requisitar_e_salvar(original_token)
 
 resumo_criptografico = encode_hash(inicio)
 cifra = captura_cifra('original_answer.json')
-casa = captura_cifra('original_answer.json')
+casa = captura_casa('original_answer.json')
 
-fim = Desafio(casa, original_token, inicio, cifra, resumo_criptografico)
+fim = Desafio(casa, original_token, cifra, inicio, resumo_criptografico)
 fim.criar_dicionario()
