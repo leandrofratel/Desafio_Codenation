@@ -46,6 +46,14 @@ def captura_casa(nome_do_arquivo): # Captura Casa
         relatorio = json.load(file)
         return relatorio["numero_casas"]
 
+def postar():
+    url = 'https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=31d49c4bec438e1e41cc7eec111fb4153ae67647'
+    files = {'answer': open('answer.json', 'rb')}
+    r = requests.post(url, files=files)
+    r.text
+    print(r.status_code)
+    print(r.text)
+
 original_token = '31d49c4bec438e1e41cc7eec111fb4153ae67647'
 inicio = requisitar_e_salvar(original_token)
 
@@ -55,3 +63,4 @@ casa = captura_casa('original_answer.json')
 
 fim = Desafio(casa, original_token, cifra, inicio, resumo_criptografico)
 fim.criar_dicionario()
+postar()
