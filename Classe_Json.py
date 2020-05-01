@@ -13,7 +13,7 @@ class Desafio():
     def criar_dicionario(self):
         # Escreve um dicionário de acordo com os objetos.
         dict = {
-            "numero_casa": self.casa, 
+            "numero_casas": self.casa, 
             "token": self.token, 
             "cifrado": self.cifrado, 
             "decifrado": self.decifrado, 
