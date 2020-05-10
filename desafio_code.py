@@ -55,7 +55,7 @@ def postar(url, filename):
     return requests.post(url, files=files).text
     
 
-original_token = '31d49c4bec438e1e41cc7eec111fb4153ae67647'
+original_token = 'INSIRA SEU TOKEN AQUI...'
 inicio = requisitar_e_salvar(original_token)
 
 resumo_criptografico = encode_hash(inicio)
@@ -65,4 +65,4 @@ casa = captura_casa('original_answer.json')
 fim = Desafio(casa, original_token, cifra, inicio, resumo_criptografico)
 fim.criar_dicionario()
 
-print(postar('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=31d49c4bec438e1e41cc7eec111fb4153ae67647','answer.json'))
+print(postar('https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token="TOKEN OCULTADO..."','answer.json'))
